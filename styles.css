@@ -1,0 +1,47 @@
+h1 {
+  text-align: center;
+}
+
+.containerIcons {
+  height: 200px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerIcons img {
+  height: 150px;
+  cursor: pointer;
+}
+
+.containerScore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  height: 60px;
+}
+
+.computerScoreBoard,
+.playerScoreBoard {
+  text-align: center;
+}
+
+.playerScore,
+.computerScore {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.containerResults {
+  display: flex;
+  gap: 60px;
+}
+
+.containerAnnounceResult {
+  text-align: center;
+  font-weight: bold;
+}

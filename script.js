@@ -12,125 +12,120 @@ function computerPlay() {
   }
 }
 
-function playRound(event) {
-  let computerSelection = computerPlay()
-  let playerSelection = event.currentTarget.myParam
-  switch (playerSelection) {
-    case 'rock':
-      if (computerSelection == 'rock') {
-        return 'Draw'
-      } else if (computerSelection == 'paper') {
-        return 'You Lose'
-      } else if (computerSelection == 'scissors') {
-        return 'You Win'
-      }
-      break
-
-    case 'paper':
-      if (computerSelection == 'rock') {
-        return 'You Win'
-      } else if (computerSelection == 'paper') {
-        return 'Draw'
-      } else if (computerSelection == 'scissors') {
-        return 'You Lose'
-      }
-      break
-
-    case 'scissors':
-      if (computerSelection == 'rock') {
-        return 'You Lose'
-      } else if (computerSelection == 'paper') {
-        return 'You Win'
-      } else if (computerSelection == 'scissors') {
-        return 'Draw'
-      }
-
-      break
-    default:
-      console.log('Unexpected error')
+announceWinner = () => {
+  const announceResult = document.querySelector('.containerAnnounceResult')
+  if (playerScore === 5) {
+    announceResult.innerText = 'YOU WIN!'
+  } else if (computerScore === 5) {
+    announceResult.innerText = 'YOU LOSE'
   }
 }
+win = () => {
+  const playerScoreBoard = document.querySelector('.playerScoreBoard')
+  playerScore++
+  playerScoreBoard.innerText = playerScore
+}
 
-function game() {
-  let playerScore = 0
-  let computerScore = 0
-  let playerSelection
-  let computerSelection
-  let result
+lose = () => {
+  const computerScoreBoard = document.querySelector('.computerScoreBoard')
+  computerScore++
+  computerScoreBoard.innerText = computerScore
+}
 
-  while (playerScore < 5 && computerScore < 5) {
-    playerSelection = prompt('Choose Rock, Paper or Scissors: ').toLowerCase()
-    computerSelection = computerPlay()
-    result = playRound(playerSelection, computerSelection)
+displaySelection = (playerSelection, computerSelection) => {
+  let playerSelectionHTML = document.querySelector('.playerSelection')
+  let computerSelectionHTML = document.querySelector('.computerSelection')
+  playerSelectionHTML.innerText = playerSelection
+  computerSelectionHTML.innerText = computerSelection
+}
 
-    if (result == 'You Win') {
-      playerScore++
-      console.log(result)
-      console.log('Player Score: ' + playerScore + '       ' + playerSelection)
-      console.log(
-        'Computer Score: ' + computerScore + '     ' + computerSelection
-      )
-      console.log(
-        '======================================================================'
-      )
-    } else if (result == 'You Lose') {
-      computerScore++
-      console.log(result)
-      console.log('Player Score: ' + playerScore + '       ' + playerSelection)
-      console.log(
-        'Computer Score: ' + computerScore + '     ' + computerSelection
-      )
-      console.log(
-        '======================================================================'
-      )
-    } else {
-      console.log(result)
-      console.log('Player Score: ' + playerScore + '       ' + playerSelection)
-      console.log(
-        'Computer Score: ' + computerScore + '     ' + computerSelection
-      )
-      console.log(
-        '======================================================================'
-      )
+function playRound(playerSelection) {
+  let computerSelection = computerPlay()
+
+  if (playerScore < 5 && computerScore < 5) {
+    switch (playerSelection) {
+      case 'rock':
+        if (computerSelection == 'paper') {
+          lose()
+          displaySelection(playerSelection, computerSelection)
+        } else if (computerSelection == 'scissors') {
+          win()
+          displaySelection(playerSelection, computerSelection)
+        } else if (computerSelection == 'rock') {
+          displaySelection(playerSelection, computerSelection)
+        }
+        break
+
+      case 'paper':
+        console.log('paper')
+        if (computerSelection == 'rock') {
+          return 'You Win'
+        } else if (computerSelection == 'paper') {
+          return 'Draw'
+        } else if (computerSelection == 'scissors') {
+          return 'You Lose'
+        }
+        break
+
+      case 'scissors':
+        console.log('scissor')
+        if (computerSelection == 'rock') {
+          return 'You Lose'
+        } else if (computerSelection == 'paper') {
+          return 'You Win'
+        } else if (computerSelection == 'scissors') {
+          return 'Draw'
+        }
+
+        break
     }
   }
-  if (playerScore == 5) {
-    console.log('Congratulations, You win!')
-  } else {
-    console.log('Game Over, You lose!')
+  announceWinner()
+}
+
+/*function game(result) {
+  let playerScore
+  let computerScore
+  document.querySelector('.playerScoreBoard').innerText = playerScore
+  document.querySelector('.computerScoreBoard').innerText = computerScore
+
+  if (result == 'You Win') {
+    playerScore++
+    document.querySelector('.playerScoreBoard').innerText = playerScore
+  } else if (result == 'You Lose') {
+    computerScore++
+    document.querySelector('.computerScoreBoard').innerText = computerScore
   }
 }
+*/
 
 const bodyHTML = document.querySelector('body')
 
-// button1 (Rock)
-const button = document.createElement('button')
-button.classList.add('button1')
-bodyHTML.appendChild(button)
-const btn1 = document.querySelector('.button1')
-btn1.innerText = 'Rock'
+var computerScore = 0
+var playerScore = 0
 
-btn1.addEventListener('click', playRound, false)
-btn1.myParam = 'rock'
+// button1 (Rock)
+
+const buttonRock = document.querySelector('.buttonRock')
+
+buttonRock.addEventListener('click', playRound, false)
+buttonRock.myParam = 'rock'
+
+buttonRock.addEventListener('click', function () {
+  playRound('rock')
+})
 
 // button2 (Paper)
 
-const button2 = document.createElement('button')
-button2.classList.add('button2')
-bodyHTML.appendChild(button2)
-const btn2 = document.querySelector('.button2')
-btn2.innerText = 'Paper'
-
-btn2.addEventListener('click', playRound, false)
-btn2.myParam = 'paper'
+const buttonPaper = document.querySelector('.buttonPaper')
+buttonPaper.addEventListener('click', playRound, false)
+buttonPaper.myParam = 'paper'
 
 // button3 (Scissors)
 
-const button3 = document.createElement('button')
-button3.classList.add('button3')
-bodyHTML.appendChild(button3)
-const btn3 = document.querySelector('.button3')
-btn3.innerText = 'Scissors'
+const buttonScissors = document.querySelector('.buttonScissors')
+buttonScissors.addEventListener('click', playRound, false)
+buttonScissors.myParam = 'scissors'
 
-btn3.addEventListener('click', playRound, false)
-btn3.myParam = 'scissors'
+document.querySelector('.playerScoreBoard').innerText = playerScore
+document.querySelector('.computerScoreBoard').innerText = computerScore
