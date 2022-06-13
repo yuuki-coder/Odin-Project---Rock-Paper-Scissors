@@ -3,7 +3,7 @@ h1 {
 }
 
 .containerIcons {
-  height: 200px;
+  height: 150px;
   display: flex;
   gap: 20px;
   align-items: center;
@@ -19,7 +19,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 60px;
+  gap: 170px;
   height: 60px;
 }
 
@@ -38,10 +38,32 @@ h1 {
 
 .containerResults {
   display: flex;
-  gap: 60px;
+  gap: 90px;
 }
 
 .containerAnnounceResult {
   text-align: center;
   font-weight: bold;
+}
+
+.containerResults {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerResults img {
+  height: 150px;
+  margin-bottom: 30px;
+}
+.containerAnnounceResult {
+  margin-bottom: 30px;
+}
+
+.containerPlayAgain {
+  text-align: center;
+}
+
+.buttonPlayAgain {
+  display: none;
 }
