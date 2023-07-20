@@ -25,7 +25,7 @@
 .scissors {
     cursor: pointer;
 }
-h1 {
+.h1 {
     text-align: center;
     background-color: blue;
 }
@@ -38,12 +38,16 @@ h1 {
 }
 
 .playerScore {
-    font-size:50px;
+    font-size:40px;
 }
 
 .computerScore {
-    font-size:50px;
+    font-size:40px;
 }
 .scoreboard-mid {
-    font-size:50px;
+    font-size:40px;
+}
+
+.scoreboard span {
+    font-size:40px;
 }

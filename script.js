@@ -10,10 +10,10 @@ let resultScoreboard = document.querySelector('.scoreboard-mid')
 
 function verification()  {
   if(playerScore==5) {
-    console.log(`Venceu!  player:${playerScore} x CPU: ${computerScore}`)
+    resultScoreboard.innerHTML='Você perdeu a rodada! <br> <a href="">Clique aqui para jogar denovo</a>'
   }
   else if(computerScore==5){
-    console.log(`Perdeu!  player:${playerScore} x CPU: ${computerScore}`)
+    resultScoreboard.innerHTML='Você ganhou a rodada! <br> <a href="">Clique aqui para jogar denovo</a>'
   }
 }
 
@@ -93,8 +93,8 @@ function playRound (playerSelection,computerSelection){
     }
     
   }
-  verification(playerScore,computerScore);
   updateScoreBoard()
+  verification(playerScore,computerScore);
   }
 
   
