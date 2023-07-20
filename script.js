@@ -10,10 +10,10 @@ let resultScoreboard = document.querySelector('.scoreboard-mid')
 
 function verification()  {
   if(playerScore==5) {
-    resultScoreboard.innerHTML='Você perdeu a rodada! <br> <a href="">Clique aqui para jogar denovo</a>'
+    resultScoreboard.innerHTML='Você ganhou a rodada! <br> <a href="">Clique aqui para jogar denovo</a>'
   }
   else if(computerScore==5){
-    resultScoreboard.innerHTML='Você ganhou a rodada! <br> <a href="">Clique aqui para jogar denovo</a>'
+    resultScoreboard.innerHTML='Você perdeu a rodada! <br> <a href="">Clique aqui para jogar denovo</a>'
   }
 }
 

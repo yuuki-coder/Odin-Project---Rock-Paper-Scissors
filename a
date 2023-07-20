@@ -1,0 +1,47 @@
+[33mcommit 8031518d7eadc8e4379ab3142d10b1545677da4e[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/rps-ui[m[33m, [m[1;32mrps-ui[m[33m)[m
+Author: Eidi Yuki <eidiyuki21@gmail.com>
+Date:   Thu Jul 20 14:12:42 2023 -0300
+
+    Algoritmo finalizado. Mudanças no UI.
+
+[33mcommit 2b1fc4acb5784bc723f02dc18fede6a615a2641c[m
+Author: Eidi Yuki <eidiyuki21@gmail.com>
+Date:   Thu Jul 20 13:18:29 2023 -0300
+
+    UI adicionado. Melhoras no algoritmo.
+
+[33mcommit 2816a1659dfdaa7afbfafe2466cdd9f33918d309[m
+Author: Eidi Yuki <eidiyuki21@gmail.com>
+Date:   Wed Jul 19 22:47:05 2023 -0300
+
+    Imagens adicionadas
+
+[33mcommit 0dbed8c64fde61b83e7824a9c51ddd03dca5f5da[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Eidi Yuki <eidiyuki21@gmail.com>
+Date:   Wed Jul 19 22:20:44 2023 -0300
+
+    teste
+
+[33mcommit 1444662b70c4106afb1f3494e851843becb7f105[m
+Author: yuuki-coder <eidiyuki21@gmail.com>
+Date:   Thu Jun 9 20:15:07 2022 -0300
+
+    Aded prompt command
+
+[33mcommit 7ca0b7f6c45100b9952492d2c8cdb4bd640cd62d[m
+Author: yuuki-coder <eidiyuki21@gmail.com>
+Date:   Thu Jun 9 16:22:03 2022 -0300
+
+    Finished game() section.
+
+[33mcommit ff892da780e542fcc6855f4fd2b6cc167962e214[m
+Author: yuuki-coder <eidiyuki21@gmail.com>
+Date:   Thu Jun 9 15:00:41 2022 -0300
+
+    Finished computerPlay() and playRound().
+
+[33mcommit ca203462cc2954be499d93c2e68a771853e9a091[m
+Author: Eidi Yuki <eidiyuki21@gmail.com>
+Date:   Thu Jun 9 14:43:43 2022 -0300
+
+    Initial commit
